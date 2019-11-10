@@ -1,5 +1,5 @@
 # Backup Data Extension
-This extension contains a variety of build tasks that help you extract data from VSTS (or other source control services) during a build and/or release.
+This extension contains a variety of pipeline tasks that help you extract data from Azure Repos (or other source control services) during a pipeline execution.
 
 ## Tasks currently available
 
@@ -8,17 +8,18 @@ This extension contains a variety of build tasks that help you extract data from
 - Commit to Git
   - pushes a sub folder or everything in the working directory into a specified git repo
 - Export Release Definitions
-  - exports all (or a subset of all) release definitions from a specified VSTS account 
+  - exports all (or a subset of all) release definitions from a specified Azure DevOps organisation
   - definitions can be downloaded into a sub folder or the current working directory
 
-#### All tasks work during build and release 
-#### All tasks work on Windows-build agents only
-An update with cross-platform support is planned 
+#### All tasks are pipeline tasks
+#### All tasks work on Windows-based agents only
 
 ## Use cases
 
-- You can use the git pull task to get everything in a Git repo, then use Git push to make a copy of this repo in a different location. 
-- You can download the definition for your VSTS release whenever you release and upload it into your on-premises TFS.
+- Use the git pull task to get everything in a Git repo, then use Git push to create a copy of this repo in a different location. 
+
+- Download one or more release definitons whenever a pipeline is executed
+- These can then be pushed to a differen Azure DevOps org or an Azure DevOps server deployment
 
 ## Code
 
@@ -55,7 +56,7 @@ Available on GitHub
 - Username 
   - if targeting TFS 2015
 - Password or PAT 
-  - if targeting TFS 2017 or VSTS
+  - if targeting TFS 2017 or newer and/or Azure DevOps 
 - Filter
-  - simple "Contains" filter to narrow the amoutn of definitions downloaded
+  - simple "Contains" filter to narrow the amount of definitions downloaded
 - Drop dir
