@@ -11,7 +11,7 @@
     ],    
     "description": "A set of build/release tasks that allow you to back up data during each build/release cycle.",
     "categories": [
-        "Build and release"
+        "Azure Pipelines"
     ],
     "icons": {
         "default": "images/extension-icon.png"        
